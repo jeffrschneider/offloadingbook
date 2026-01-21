@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 7: Building the Offloading Rocketship - Offloading</title>
+    <link rel="stylesheet" href="book.css">
+    <style>
+        /* Page-specific styles for chunked reading */
+        .page {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+        .page.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Page indicator */
+        .page-indicator {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: #666;
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #3d3d3d;
+        }
+        .page-indicator .current {
+            color: #d4af37;
+        }
+
+        /* Section label */
+        .section-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: #888;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Pagination controls */
+        .pagination {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #3d3d3d;
+        }
+        .pagination button {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            background: transparent;
+            border: 1px solid #3d3d3d;
+            color: #d4af37;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .pagination button:hover:not(:disabled) {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: #d4af37;
+        }
+        .pagination button:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+        .pagination .page-dots {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .pagination .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #3d3d3d;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .pagination .dot.active {
+            background: #d4af37;
+        }
+        .pagination .dot:hover {
+            background: #666;
+        }
+
+        /* Chapter nav link */
+        .chapter-link {
+            display: inline-block;
+            margin-top: 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: #d4af37;
+            text-decoration: none;
+        }
+        .chapter-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Reading time estimate */
+        .reading-time {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+
+    <nav>
+        <div class="logo">OFFLOADING</div>
+        <ul class="nav-links">
+            <li><a href="contents.html">contents</a></li>
+            <li><a href="about.html">about</a></li>
+            <li><a href="#">download</a></li>
+        </ul>
+    </nav>
+
+    <div class="chapter-nav">
+        <a href="chapter-01.html"><div class="chapter-dot" title="Chapter 1"></div></a>
+        <a href="chapter-02.html"><div class="chapter-dot" title="Chapter 2"></div></a>
+        <a href="chapter-03.html"><div class="chapter-dot" title="Chapter 3"></div></a>
+        <a href="chapter-04.html"><div class="chapter-dot" title="Chapter 4"></div></a>
+        <a href="chapter-05.html"><div class="chapter-dot" title="Chapter 5"></div></a>
+        <a href="chapter-06.html"><div class="chapter-dot" title="Chapter 6"></div></a>
+        <a href="chapter-07.html"><div class="chapter-dot active" title="Chapter 7"></div></a>
+        <a href="chapter-08.html"><div class="chapter-dot" title="Chapter 8"></div></a>
+        <a href="chapter-09.html"><div class="chapter-dot" title="Chapter 9"></div></a>
+        <a href="chapter-10.html"><div class="chapter-dot" title="Chapter 10"></div></a>
+        <a href="chapter-11.html"><div class="chapter-dot" title="Chapter 11"></div></a>
+        <a href="chapter-12.html"><div class="chapter-dot" title="Chapter 12"></div></a>
+        <a href="chapter-13.html"><div class="chapter-dot" title="Chapter 13"></div></a>
+        <a href="chapter-14.html"><div class="chapter-dot" title="Chapter 14"></div></a>
+        <a href="chapter-15.html"><div class="chapter-dot" title="Chapter 15"></div></a>
+        <a href="chapter-16.html"><div class="chapter-dot" title="Chapter 16"></div></a>
+    </div>
+
+    <main class="content">
+        <div class="page-indicator">
+            Page <span class="current">1</span> of <span class="total">5</span>
+            <span class="reading-time">· ~3 min read</span>
+        </div>
+
+        <!-- PAGE 1: Core Concepts -->
+        <div class="page active" data-page="1">
+            <div class="chapter-label">Chapter Seven</div>
+            <h1>Building the Offloading Rocketship</h1>
+            <h2>Core Concepts</h2>
+
+            <p class="drop-cap">The Agentic Services Group establishes enterprise infrastructure for agent deployment. This entity functions as a delivery and support team, not a speculative research group, prioritizing speed and security over experimental research. The organizational philosophy emphasizes centralized enablement with decentralized execution—the central team manages foundational tools and guardrails while business units handle domain expertise and deployment.</p>
+
+            <h2>Key Architectural Components</h2>
+
+            <p><strong>AI-Assisted Coding</strong> represents a fundamental shift where applications utilize agents as specialized, smart functions within their stack rather than simple conversational interfaces. This enables autonomous execution of multi-step workflows.</p>
+
+            <p>Essential services include:</p>
+
+            <ul>
+                <li>Standardized agent frameworks with security protections</li>
+                <li>Centralized knowledge foundations for RAG systems</li>
+                <li>Standardized work artifact generation with compliance templates</li>
+                <li>Unified observability and auditing across all agent interactions</li>
+            </ul>
+
+            <div class="accent-box">
+                <span class="label">// KEY INSIGHT</span>
+                <p>The Agentic Services Group is a delivery and support team, not a speculative research group. Speed and security take priority over experimental research.</p>
+            </div>
+        </div>
+
+        <!-- PAGE 2: Organizational Insights and Governance -->
+        <div class="page" data-page="2">
+            <div class="section-label">Organizational Insights</div>
+            <h2>Analyzing Business Operations</h2>
+
+            <p>Analyzing Business Operations through communication data transforms unstructured information into strategic insights. The system identifies decision patterns, expertise networks, and operational bottlenecks through communication flow analysis and dynamic expertise mapping.</p>
+
+            <h2>Critical Governance Elements</h2>
+
+            <p>The <strong>AI Steering Committee</strong> provides cross-functional oversight, establishing policies, prioritizing initiatives, and managing risk. The committee includes executive sponsors, business unit leaders, security officers, and legal representation.</p>
+
+            <p><strong>Communication Infrastructure</strong> requires dedicated intranet sites, active support channels ("Ask the Agent Experts"), office hours, and regular newsletters highlighting successful deployments.</p>
+
+            <p>The transformation requires "Maximum Transparency, Minimum Comfort" in communications and deliberate positioning separate from traditional IT departments to maintain innovation velocity.</p>
+
+            <div class="accent-box">
+                <span class="label">// KEY INSIGHT</span>
+                <p>Organizations must overstaff early to prevent the Agentic Services Group from becoming a bottleneck. The team structure prioritizes enablement capacity over cost control.</p>
+            </div>
+        </div>
+
+        <!-- PAGE 3: Team Structure - Leadership -->
+        <div class="page" data-page="3">
+            <div class="section-label">Team Structure</div>
+            <h2>Team Structure</h2>
+
+            <p>The transformation requires specialized roles beyond traditional job titles. These roles are designed to address the unique challenges of building and scaling an agentic organization.</p>
+
+            <h3>Leadership Functions</h3>
+
+            <p><strong>Program Bulldog:</strong> Handles strategic planning and business alignment. This role ensures the transformation stays connected to business outcomes and maintains executive support.</p>
+
+            <p><strong>Chief Agentic Visionary:</strong> Owns technical architecture. This person defines the technical vision and ensures architectural decisions support long-term scalability.</p>
+
+            <p><strong>Entrepreneur:</strong> Focused on revenue identification. This role constantly scans for opportunities where agents can create new revenue streams or dramatically improve margins.</p>
+
+            <p><strong>Voice of the Customer:</strong> Champions user experience. This person ensures that agents are built to serve actual user needs, not theoretical use cases.</p>
+
+            <p><strong>OCM Instigator:</strong> Drives change management. This role owns the human side of the transformation, ensuring adoption and managing resistance.</p>
+
+            <p><strong>Anxious CTO:</strong> Serves as the enterprise risk conscience. This person asks the uncomfortable questions about security, compliance, and operational risk that others might overlook in the excitement of building.</p>
+        </div>
+
+        <!-- PAGE 4: Team Structure - Delivery Roles -->
+        <div class="page" data-page="4">
+            <div class="section-label">Delivery Roles</div>
+            <h3>Delivery Roles</h3>
+
+            <p><strong>Agentic Engineers:</strong> The builder/coders who construct the agents themselves. They combine traditional software engineering skills with deep understanding of LLMs, prompt engineering, and agent orchestration patterns.</p>
+
+            <p><strong>Platform Engineers:</strong> Focus on infrastructure. They build and maintain the platforms that enable rapid agent development and deployment, including the tooling, pipelines, and runtime environments.</p>
+
+            <p><strong>Delivery Managers:</strong> Maintain operational rhythm. They ensure the team ships consistently, manage dependencies, and keep the transformation moving at the pace required by the Mandate.</p>
+
+            <p><strong>AI Training Development Specialists:</strong> Create the learning experiences that help the organization develop agent fluency. They design curricula, build training materials, and facilitate hands-on workshops.</p>
+
+            <p><strong>Product Owners/Analysts:</strong> Bridge business needs and technical capabilities. They translate business problems into agent specifications and ensure that what gets built actually solves real problems.</p>
+
+            <blockquote>The team structure prioritizes enablement capacity over cost control, ensuring the central function accelerates rather than constrains organizational velocity.</blockquote>
+        </div>
+
+        <!-- PAGE 5: Success Factors -->
+        <div class="page" data-page="5">
+            <div class="section-label">Success Factors</div>
+            <h2>Success Factors</h2>
+
+            <p>Organizations must <strong>overstaff early</strong> to prevent the Agentic Services Group from becoming a bottleneck. The team structure prioritizes enablement capacity over cost control, ensuring the central function accelerates rather than constrains organizational velocity.</p>
+
+            <p>The transformation requires deliberate positioning separate from traditional IT departments to maintain innovation velocity. When the Agentic Services Group is buried within IT, it inherits IT's pace, processes, and political constraints. Separation allows the group to operate at transformation speed rather than operational speed.</p>
+
+            <p>Communication must embody "Maximum Transparency, Minimum Comfort." The team cannot sugarcoat the impact of agent deployment on roles and workflows. Honest communication builds trust, even when the message is difficult. Employees can handle hard truths; what they cannot handle is being blindsided.</p>
+
+            <p>Finally, success requires measuring the right things. Traditional IT metrics—uptime, ticket resolution, project delivery—don't capture the value of agent deployment. New metrics must focus on business outcomes: time saved, decisions accelerated, capacity created, and revenue generated.</p>
+
+            <div class="accent-box">
+                <span class="label">// THE IMPERATIVE</span>
+                <p>The Agentic Services Group exists to accelerate the organization's transformation, not to build interesting technology. Every decision must be evaluated against this core purpose.</p>
+            </div>
+
+            <a href="chapter-06.html" class="chapter-link">← Previous: Chapter 6</a>
+            <a href="chapter-08.html" class="chapter-link" style="float: right;">Continue to Chapter 8: Future Proofing Your People →</a>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <button id="prevBtn" disabled>← Previous</button>
+            <div class="page-dots" id="pageDots"></div>
+            <button id="nextBtn">Next →</button>
+        </div>
+    </main>
+
+    <script>
+        const pages = document.querySelectorAll('.page');
+        const totalPages = pages.length;
+        let currentPage = 1;
+
+        // Initialize
+        document.querySelector('.total').textContent = totalPages;
+        createDots();
+        updateNavigation();
+
+        function createDots() {
+            const dotsContainer = document.getElementById('pageDots');
+            for (let i = 1; i <= totalPages; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'dot' + (i === 1 ? ' active' : '');
+                dot.onclick = () => goToPage(i);
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        function goToPage(pageNum) {
+            pages.forEach(p => p.classList.remove('active'));
+            document.querySelector(`[data-page="${pageNum}"]`).classList.add('active');
+            currentPage = pageNum;
+            updateNavigation();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function updateNavigation() {
+            document.querySelector('.current').textContent = currentPage;
+            document.getElementById('prevBtn').disabled = currentPage === 1;
+            document.getElementById('nextBtn').disabled = currentPage === totalPages;
+
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i + 1 === currentPage);
+            });
+
+            // Update progress bar
+            const progress = (currentPage / totalPages) * 100;
+            document.querySelector('.progress-bar').style.width = progress + '%';
+        }
+
+        document.getElementById('prevBtn').onclick = () => {
+            if (currentPage > 1) goToPage(currentPage - 1);
+        };
+
+        document.getElementById('nextBtn').onclick = () => {
+            if (currentPage < totalPages) goToPage(currentPage + 1);
+        };
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft' && currentPage > 1) goToPage(currentPage - 1);
+            if (e.key === 'ArrowRight' && currentPage < totalPages) goToPage(currentPage + 1);
+        });
+    </script>
+</body>
+</html>

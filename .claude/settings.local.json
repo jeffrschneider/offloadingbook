@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git clone:*)",
+      "Bash(git init:*)",
+      "Bash(git remote add:*)",
+      "Bash(git fetch:*)",
+      "Bash(git checkout:*)",
+      "Bash(sort:*)",
+      "WebFetch(domain:docs.google.com)",
+      "WebFetch(domain:doc-10-3k-docstext.googleusercontent.com)",
+      "WebFetch(domain:doc-00-3k-docstext.googleusercontent.com)",
+      "WebFetch(domain:doc-04-3k-docstext.googleusercontent.com)",
+      "WebFetch(domain:doc-0k-3k-docstext.googleusercontent.com)",
+      "Bash(curl:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd all book chapters \\(1-16\\) as markdown files\n\nExtracted chapters from Google Docs and saved as individual markdown files for easier access and version control.\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push)"
+    ]
+  }
+}

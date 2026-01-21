@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1: Offloading to AI Agents - Offloading</title>
+    <link rel="stylesheet" href="book.css">
+    <style>
+        /* Page-specific styles for chunked reading */
+        .page {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+        .page.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Page indicator */
+        .page-indicator {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: #666;
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #3d3d3d;
+        }
+        .page-indicator .current {
+            color: #d4af37;
+        }
+
+        /* Section label */
+        .section-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: #888;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Pagination controls */
+        .pagination {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #3d3d3d;
+        }
+        .pagination button {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            background: transparent;
+            border: 1px solid #3d3d3d;
+            color: #d4af37;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .pagination button:hover:not(:disabled) {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: #d4af37;
+        }
+        .pagination button:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+        .pagination .page-dots {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .pagination .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #3d3d3d;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .pagination .dot.active {
+            background: #d4af37;
+        }
+        .pagination .dot:hover {
+            background: #666;
+        }
+
+        /* Chapter nav link */
+        .chapter-link {
+            display: inline-block;
+            margin-top: 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: #d4af37;
+            text-decoration: none;
+        }
+        .chapter-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Reading time estimate */
+        .reading-time {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+
+    <nav>
+        <div class="logo">OFFLOADING</div>
+        <ul class="nav-links">
+            <li><a href="contents.html">contents</a></li>
+            <li><a href="about.html">about</a></li>
+            <li><a href="#">download</a></li>
+        </ul>
+    </nav>
+
+    <div class="chapter-nav">
+        <a href="chapter-01.html"><div class="chapter-dot active" title="Chapter 1"></div></a>
+        <a href="chapter-02.html"><div class="chapter-dot" title="Chapter 2"></div></a>
+        <a href="chapter-03.html"><div class="chapter-dot" title="Chapter 3"></div></a>
+        <a href="chapter-04.html"><div class="chapter-dot" title="Chapter 4"></div></a>
+        <a href="chapter-05.html"><div class="chapter-dot" title="Chapter 5"></div></a>
+        <a href="chapter-06.html"><div class="chapter-dot" title="Chapter 6"></div></a>
+        <a href="chapter-07.html"><div class="chapter-dot" title="Chapter 7"></div></a>
+        <a href="chapter-08.html"><div class="chapter-dot" title="Chapter 8"></div></a>
+        <a href="chapter-09.html"><div class="chapter-dot" title="Chapter 9"></div></a>
+        <a href="chapter-10.html"><div class="chapter-dot" title="Chapter 10"></div></a>
+        <a href="chapter-11.html"><div class="chapter-dot" title="Chapter 11"></div></a>
+        <a href="chapter-12.html"><div class="chapter-dot" title="Chapter 12"></div></a>
+        <a href="chapter-13.html"><div class="chapter-dot" title="Chapter 13"></div></a>
+        <a href="chapter-14.html"><div class="chapter-dot" title="Chapter 14"></div></a>
+        <a href="chapter-15.html"><div class="chapter-dot" title="Chapter 15"></div></a>
+        <a href="chapter-16.html"><div class="chapter-dot" title="Chapter 16"></div></a>
+    </div>
+
+    <main class="content">
+        <div class="page-indicator">
+            Page <span class="current">1</span> of <span class="total">12</span>
+            <span class="reading-time">· ~3 min read</span>
+        </div>
+
+        <!-- PAGE 1: The Speed Problem -->
+        <div class="page active" data-page="1">
+            <div class="chapter-label">Chapter One</div>
+            <h1>Offloading to AI Agents</h1>
+            <h2>The Speed Problem</h2>
+
+            <p class="drop-cap">This book is not about making your organization more productive. It's not about cutting costs or doing more with less. It's about something far more fundamental: survival at machine speed. Because while you're still running your business the way businesses have always been run—with humans at the center of every decision, every process, every transaction—a new category of enterprise is emerging. One that doesn't wait for people to show up, have meetings, get alignment, or execute tasks. One that operates, learns, and improves continuously, autonomously, at computational velocity.</p>
+
+            <p>The transformation happening right now is not about offloading work to AI so your people can focus on "higher-value" activities. That is still thinking like a human-centered organization. The real shift is this: You are removing humans from the critical path of enterprise execution.</p>
+
+            <p>We are not automating jobs. We are automating the business itself—so it can learn, adapt, and execute faster than any human organization ever could. Your people are not the operational engine anymore; they are the strategic oversight. The business runs itself. It improves itself. It responds to market signals, customer needs, and competitive threats in real-time—not in the time it takes to schedule a meeting.</p>
+
+            <div class="accent-box">
+                <span class="label">// KEY INSIGHT</span>
+                <p>The only sustainable competitive advantage left is organizational velocity. Humans can't deliver it. Agentic systems can.</p>
+            </div>
+        </div>
+
+        <!-- PAGE 2: Speed Problem continued + Organizational Paralysis intro -->
+        <div class="page" data-page="2">
+            <div class="section-label">The Speed Problem</div>
+
+            <p>This isn't a productivity play or a cost play. It's an existential speed play. Companies that don't make this transformation won't just be less efficient; they'll be fundamentally too slow to compete. They will lose not because their people lack talent, but because their operating model requires human latency at every step—and their competitors' doesn't.</p>
+
+            <p>The question facing every business leader today isn't, "Should we adopt AI?" It's, "Can our business survive at human speed?" The answer, increasingly, is no.</p>
+
+            <h2>The Anatomy of Organizational Paralysis</h2>
+
+            <p>To truly understand why offloading represents such a fundamental shift, we must first dissect the mechanisms of organizational paralysis that plague modern enterprises. Every company, regardless of size or industry, operates through a complex web of processes, decisions, and interactions. As organizations grow, this web becomes increasingly tangled, creating what organizational theorists call "complexity debt"—the accumulated burden of outdated processes, redundant systems, and inefficient workflows that slow everything down.</p>
+
+            <p>Consider how a simple customer complaint travels through a typical enterprise. It begins with a customer service representative who logs the issue in one system, then manually transfers key information to another system for tracking. A supervisor reviews it, adds notes in a third system, and assigns it to a technical team that uses yet another platform. Each handoff introduces delays, potential errors, and opportunities for the complaint to fall through the cracks.</p>
+        </div>
+
+        <!-- PAGE 3: Organizational Paralysis continued -->
+        <div class="page" data-page="3">
+            <div class="section-label">Organizational Paralysis</div>
+
+            <p>This paralysis extends to every corner of the organization. Financial teams spend weeks preparing quarterly reports, manually consolidating data from dozens of sources, cross-referencing spreadsheets, and hunting down discrepancies. By the time the report reaches executives, market conditions have already shifted. Marketing teams struggle to personalize campaigns at scale, resorting to broad segments that miss the nuanced preferences of individual customers. Product development cycles stretch endlessly as teams wait for market research, competitive analysis, and customer feedback to trickle through bureaucratic channels.</p>
+
+            <p>The root cause isn't incompetence or lack of effort—it's the fundamental mismatch between human cognitive capabilities and the demands of modern business. The human brain, remarkable as it is, can only process about 120 bits of information per second. A single conversation uses about 60 bits, leaving little bandwidth for anything else. Meanwhile, the average enterprise generates terabytes of data daily, receives thousands of customer interactions, and faces hundreds of decisions that require immediate attention. It's like asking someone to drink from a fire hose—not just difficult, but physiologically impossible.</p>
+
+            <p>Traditional management theory, developed in an era of typewriters and filing cabinets, offers no solution to this modern dilemma. The principles of scientific management, hierarchical organization, and linear processes that served us well in the industrial age become liabilities in the information age. We've reached the limits of what human-centric organizational design can achieve, which is why offloading represents not just an improvement, but a fundamental reimagining of how work gets done.</p>
+        </div>
+
+        <!-- PAGE 4: Beyond Digital Transformation -->
+        <div class="page" data-page="4">
+            <div class="section-label">Beyond Digital Transformation</div>
+            <h2>Beyond Digital Transformation</h2>
+
+            <p>For over a decade, "digital transformation" has been the corporate rallying cry, promising to unlock efficiency through technology. Consultants pitched it as the answer to every business challenge, from declining revenues to customer dissatisfaction. Companies invested billions in new systems, platforms, and tools, expecting revolutionary change. Yet, the results have often been underwhelming, sometimes catastrophically so.</p>
+
+            <p>The problem with traditional digital transformation lies in its fundamental approach. Tools like robotic process automation (RPA) or enterprise resource planning (ERP) systems frequently end up automating existing inefficiencies. They mimic human actions within rigid, predefined parameters, essentially digitizing broken processes rather than fixing them. It's like putting a powerful engine in a horse-drawn carriage—you might go faster, but you're still constrained by an outdated design.</p>
+
+            <p>Offloading shatters this cycle. Unlike traditional automation, which is tethered to static processes, offloading delegates entire workflows to AI agents that can reason, adapt, and execute autonomously. These agents don't just follow scripts; they understand context, learn from patterns, and make intelligent decisions. When an AI agent encounters an invoice in an unexpected format, it doesn't fail—it analyzes the document, identifies the relevant information regardless of layout, and processes it accordingly.</p>
+        </div>
+
+        <!-- PAGE 5: Digital Transformation continued + Economics intro -->
+        <div class="page" data-page="5">
+            <div class="section-label">Beyond Digital Transformation</div>
+
+            <p>This distinction becomes even more powerful when we consider complex, multi-step processes. Traditional automation requires extensive programming for every possible scenario, creating brittle systems that break when faced with unexpected situations. AI agents, by contrast, can navigate uncertainty, make judgment calls, and even identify opportunities for process improvement. They don't just execute tasks; they optimize them continuously, learning from every interaction to become more effective over time.</p>
+
+            <p>This is more than just a technological upgrade; it's a philosophical shift. Where digital transformation sought to optimize human processes, offloading redefines who—or what—performs the work. The promise of offloading isn't just about doing things better—it's about enabling us to do better things.</p>
+
+            <h2>The Economics of Intelligence</h2>
+
+            <p>To fully grasp the transformative potential of offloading, we must understand the fundamental economics at play. For centuries, intelligence has been a scarce resource, limited by human biology and availability. Every business decision, every analysis, every creative solution required human cognitive effort—a resource that's expensive, limited, and impossible to scale quickly. This scarcity of intelligence has shaped every aspect of how we organize work.</p>
+
+            <p>Offloading changes this equation dramatically. For the first time in history, intelligence is becoming abundant and affordable. An AI agent can perform complex analysis that would take a team of analysts weeks in a matter of minutes, at a fraction of the cost.</p>
+        </div>
+
+        <!-- PAGE 6: Economics of Intelligence continued -->
+        <div class="page" data-page="6">
+            <div class="section-label">The Economics of Intelligence</div>
+
+            <p>Consider the implications for personalization. Today, true one-to-one marketing remains a luxury reserved for high-value customers because the cost of human analysis and customization is prohibitive. But when an AI agent can analyze individual customer behavior, preferences, and context to generate perfectly tailored recommendations at virtually zero marginal cost, personalization at scale becomes not just possible but economically inevitable. Every customer, regardless of their value, can receive the kind of attention previously reserved for VIPs.</p>
+
+            <p>The same dynamic applies to decision-making. Currently, most operational decisions are made with incomplete information because the cost of comprehensive analysis exceeds the value of marginal improvement. Sales teams rely on gut instinct rather than data analysis for most deals. Supply chain managers make educated guesses about demand rather than running complex simulations. When AI agents can perform this analysis instantly and cheaply, every decision can be informed by comprehensive data analysis, pattern recognition, and predictive modeling.</p>
+
+            <p>This abundance of intelligence also enables entirely new categories of work that were previously impossible. Continuous optimization becomes feasible when AI agents can constantly monitor, analyze, and adjust processes in real-time. Predictive maintenance can extend beyond high-value equipment to every asset in the organization. These aren't just improvements to existing processes—they're entirely new capabilities that create competitive advantages.</p>
+        </div>
+
+        <!-- PAGE 7: Offloading as Evolution -->
+        <div class="page" data-page="7">
+            <div class="section-label">Offloading as Evolution</div>
+            <h2>Offloading as the Next Evolution</h2>
+
+            <p>To understand the profound significance of offloading, consider its place in the history of business evolution. Each era of business has been defined by how it addressed the fundamental constraints of its time, and each breakthrough has unlocked new levels of productivity and possibility.</p>
+
+            <p>In the early industrial age, the constraint was physical labor. The solution was mechanization—replacing human muscle with steam engines and electric motors. This didn't just make existing work faster; it enabled entirely new industries and transformed society. The second wave addressed the constraint of information processing through computerization. Mainframes, personal computers, and eventually the internet didn't just speed up calculations; they enabled global communication, e-commerce, and the information economy.</p>
+
+            <p>In the 1980s, offshoring revolutionized global operations by shifting labor to lower-cost regions. In the 1990s, business process reengineering (BPR) restructured entire workflows, eliminating redundancies and streamlining operations to boost productivity. But both had limits—human processes could only be optimized so far before hitting the ceiling of human capability.</p>
+
+            <p>Today, offloading tackles the most critical challenge of our time: the cognitive and temporal limits of human work. This isn't just another incremental improvement—it's a fundamental breakthrough. Where previous evolutions moved work (offshoring) or improved work (BPR), offloading transforms the nature of work itself.</p>
+        </div>
+
+        <!-- PAGE 8: The Promise + Inevitability intro -->
+        <div class="page" data-page="8">
+            <div class="section-label">The Promise of Offloading</div>
+            <h2>The Promise of Offloading</h2>
+
+            <p>The transformative potential of offloading is nothing short of staggering. AI agents provide radical scalability, operating 24/7 across time zones and processing thousands of tasks simultaneously—from answering customer queries to proactively optimizing complex supply chains. Unlike human workers who need rest, training, and motivation, AI agents work continuously at peak performance.</p>
+
+            <p>Consider the transformative impact on innovation. When engineers spend 60% of their time on documentation and routine testing, innovation suffers. When marketers are bogged down in campaign execution rather than strategy, creativity withers. Offloading liberates human talent to focus on what humans do best: imagine, create, connect, and inspire.</p>
+
+            <p>The compounding effects of offloading create a virtuous cycle. As AI agents handle routine tasks, they generate more data about process efficiency, customer behavior, and operational patterns. This data feeds back into the AI systems, making them smarter and more capable. But this transition isn't universal—organizations need far fewer orchestrators than they previously needed executors. Offloading doesn't just make business more efficient—it fundamentally restructures who does what work.</p>
+
+            <h2>The Inevitability Argument</h2>
+
+            <p>The question facing every executive isn't whether AI agents will transform their industry—it's whether their organization will lead, follow, or fail during that transformation. The competitive dynamics of agent adoption create forcing functions that punish hesitation more severely than they punish early mistakes.</p>
+        </div>
+
+        <!-- PAGE 9: The Competitive Ratchet -->
+        <div class="page" data-page="9">
+            <div class="section-label">The Competitive Ratchet</div>
+            <h3>The Competitive Ratchet</h3>
+
+            <p>Consider the mathematics of competition when one player in your market deploys agents successfully. If your competitor achieves genuine three-times productivity improvement in core operations, they face a strategic choice with two brutal options, both of which destroy your competitive position.</p>
+
+            <p><strong>Option one: the margin investment path.</strong> They maintain current pricing but now operate with dramatically lower costs. A business previously running at forty percent gross margins is suddenly operating at sixty-five percent margins. That margin expansion flows into R&D, sales capacity, marketing spend, and strategic initiatives. Your competitor can now outspend you two-to-one on growth investments while maintaining profitability. The gap compounds quarterly.</p>
+
+            <p><strong>Option two: the price war path.</strong> They cut prices by thirty percent, maintaining their historical margins while your margins evaporate. You can't match these prices without destroying your own margins because you're still operating with the old cost structure. Market share shifts rapidly. Within eighteen months, you're in a death spiral.</p>
+
+            <p>The key insight is that you can't compete against agent-augmented operations using manual processes. The productivity delta is too large. A human analyst takes three days to complete work an agent-augmented analyst completes in four hours. The math is unforgiving.</p>
+
+            <blockquote>The competitive ratchet only turns one direction. You're not choosing whether to transform—you're choosing whether to lead the transformation, follow it quickly, or die slowly while pretending it isn't happening.</blockquote>
+        </div>
+
+        <!-- PAGE 10: Talent Flight + Capability Compound -->
+        <div class="page" data-page="10">
+            <div class="section-label">Talent & Capability</div>
+            <h3>Your Best People Leave First</h3>
+
+            <p>The transformation creates a perverse selection problem. The employees most capable of thriving in agent-augmented environments—those with learning agility, comfort with ambiguity, and adaptive mindset—are precisely the employees with the most options. They're your top twenty percent, the people you built your competitive advantage around.</p>
+
+            <p>When you delay transformation, you send a clear signal to your best people: this organization isn't building the future. The ambitious and capable don't wait around. They leave for competitors who are transforming. By the time you decide to transform, you're attempting something significantly harder with significantly weaker talent.</p>
+
+            <h3>Small Leads Become Insurmountable</h3>
+
+            <p>The advantage doesn't accrue to those who adopt the most mature technology—it accrues to those who build organizational muscle in deploying and improving agent-powered operations. Organizations implementing agents today are learning what actually matters: how to design effective human-agent workflows, how to structure prompts that extract reliable value, how to govern autonomous systems without strangling innovation.</p>
+
+            <p>This learning happens only through real implementation under actual business constraints. You can't acquire it from consultants, case studies, or vendor presentations. The learning is institutional, accumulated through hundreds of small experiments. Consider two organizations separated by eighteen months of transformation experience. The follower arrives to find better technology—but lacks the organizational capability to deploy it effectively. They're eighteen months behind on technology but thirty-six months behind on capability.</p>
+        </div>
+
+        <!-- PAGE 11: Hidden Value + Perils -->
+        <div class="page" data-page="11">
+            <div class="section-label">Value & Perils</div>
+            <h2>The Hidden Dimensions of Value Creation</h2>
+
+            <p>Beyond the obvious operational benefits, offloading creates value in dimensions that traditional business metrics often fail to capture. Every task performed by an AI agent generates data about process efficiency, decision outcomes, and pattern recognition. This creates an unprecedented feedback loop where the organization literally gets smarter with every transaction.</p>
+
+            <p>Offloading also enables "impossible experiments." When AI agents can explore multiple paths simultaneously at marginal cost, organizations can test hundreds of hypotheses, explore numerous market niches, and iterate through countless product variations. This experimental capacity accelerates innovation in ways that were previously impossible.</p>
+
+            <h2>The Perils of Adoption</h2>
+
+            <p>Despite its promise, the path to offloading is fraught with challenges. The AI market is turbulent, with vendors emerging and collapsing at a dizzying pace. Data privacy risks loom large, as AI agents require access to sensitive customer and operational data. Ethical challenges are equally pressing—AI agents trained on biased data can perpetuate and amplify existing biases.</p>
+
+            <p>Perhaps most challenging is organizational resistance to change. Offloading represents a fundamental shift in how work gets done, and human nature resists such changes. Employees fear job loss, managers fear loss of control, and executives fear the unknown. Without careful change management, even technically successful offloading initiatives can fail to deliver value.</p>
+        </div>
+
+        <!-- PAGE 12: Human-AI Partnership + Call to Action -->
+        <div class="page" data-page="12">
+            <div class="section-label">The Path Forward</div>
+            <h2>The Human-AI Partnership</h2>
+
+            <p>Offloading thrives on a powerful symbiosis between humans and AI. AI agents excel at executing repetitive, data-intensive tasks—processing thousands of invoices, monitoring networks for security threats 24/7, or generating personalized marketing content at scale. Humans bring irreplaceable capabilities: understanding context and nuance, making ethical judgments in complex situations, building relationships, and creating vision.</p>
+
+            <p>This partnership fundamentally redefines roles, positioning employees not as cogs in a machine but as orchestrators who guide AI agents and evaluate outputs. The partnership model creates new job categories: AI trainers, AI auditors, and AI interpreters. But the ratio is brutal—these new roles number in dozens where traditional roles numbered in hundreds.</p>
+
+            <h2>The Leadership Call to Action</h2>
+
+            <p>In a world defined by data, speed, and relentless competition, offloading is no longer a luxury—it's a mandate for survival. The evidence is overwhelming, the technology is mature, and the early adopters are already pulling ahead. The question facing every leader is not whether to adopt offloading, but how quickly and effectively they can make the transformation.</p>
+
+            <div class="accent-box">
+                <span class="label">// THE IMPERATIVE</span>
+                <p>The time for decision is now. Every day of delay is a day your competitors move ahead. The offloading revolution has begun, and your organization's future depends on how you respond.</p>
+            </div>
+
+            <a href="chapter-02.html" class="chapter-link">Continue to Chapter 2: The Agentic Advantage →</a>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <button id="prevBtn" disabled>← Previous</button>
+            <div class="page-dots" id="pageDots"></div>
+            <button id="nextBtn">Next →</button>
+        </div>
+    </main>
+
+    <script>
+        const pages = document.querySelectorAll('.page');
+        const totalPages = pages.length;
+        let currentPage = 1;
+
+        // Initialize
+        document.querySelector('.total').textContent = totalPages;
+        createDots();
+        updateNavigation();
+
+        function createDots() {
+            const dotsContainer = document.getElementById('pageDots');
+            for (let i = 1; i <= totalPages; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'dot' + (i === 1 ? ' active' : '');
+                dot.onclick = () => goToPage(i);
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        function goToPage(pageNum) {
+            pages.forEach(p => p.classList.remove('active'));
+            document.querySelector(`[data-page="${pageNum}"]`).classList.add('active');
+            currentPage = pageNum;
+            updateNavigation();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function updateNavigation() {
+            document.querySelector('.current').textContent = currentPage;
+            document.getElementById('prevBtn').disabled = currentPage === 1;
+            document.getElementById('nextBtn').disabled = currentPage === totalPages;
+
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i + 1 === currentPage);
+            });
+
+            // Update progress bar
+            const progress = (currentPage / totalPages) * 100;
+            document.querySelector('.progress-bar').style.width = progress + '%';
+        }
+
+        document.getElementById('prevBtn').onclick = () => {
+            if (currentPage > 1) goToPage(currentPage - 1);
+        };
+
+        document.getElementById('nextBtn').onclick = () => {
+            if (currentPage < totalPages) goToPage(currentPage + 1);
+        };
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft' && currentPage > 1) goToPage(currentPage - 1);
+            if (e.key === 'ArrowRight' && currentPage < totalPages) goToPage(currentPage + 1);
+        });
+    </script>
+</body>
+</html>

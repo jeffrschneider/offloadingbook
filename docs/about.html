@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Offloading: The Agentic Enterprise</title>
+    <link rel="stylesheet" href="book.css">
+    <style>
+        .about-header {
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            border-bottom: 1px solid #3d3d3d;
+            margin-bottom: 3rem;
+        }
+
+        .about-header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-header p {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        .about-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+
+        .about-section {
+            margin-bottom: 3rem;
+        }
+
+        .about-section h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 500;
+            color: #d4af37;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-section p {
+            color: #e0e0e0;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .book-details {
+            background: rgba(212, 175, 55, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 8px;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+        }
+
+        .book-details .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .book-details .detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .book-details .label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .book-details .value {
+            font-family: 'Outfit', sans-serif;
+            color: #f5f0e8;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid #3d3d3d;
+        }
+
+        .cta-section a {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            background: #d4af37;
+            color: #1a1a1a;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .cta-section a:hover {
+            background: #e5c349;
+            transform: translateY(-2px);
+        }
+
+        .author-card {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+
+        .author-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #d4af37;
+            flex-shrink: 0;
+        }
+
+        .author-bio h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #f5f0e8;
+            margin-bottom: 1rem;
+        }
+
+        .author-bio p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .about-header {
+                padding: 6rem 1.5rem 3rem;
+            }
+            .about-header h1 {
+                font-size: 2.25rem;
+            }
+            .about-content {
+                padding: 0 1.5rem 3rem;
+            }
+            .book-details .detail-row {
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+            .author-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">OFFLOADING</div>
+        <ul class="nav-links">
+            <li><a href="contents.html">contents</a></li>
+            <li><a href="about.html">about</a></li>
+            <li><a href="#">download</a></li>
+        </ul>
+    </nav>
+
+    <header class="about-header">
+        <h1>About This Book</h1>
+        <p>A strategic guide to the agentic enterprise</p>
+    </header>
+
+    <main class="about-content">
+        <section class="about-section author-section">
+            <h2>About the Author</h2>
+            <div class="author-card">
+                <img src="Jeff.jpg" alt="Jeff Schneider" class="author-photo">
+                <div class="author-bio">
+                    <h3>Jeff Schneider</h3>
+                    <p>Jeff Schneider is the founder and former CEO of MomentumSI, which he led to a successful exit to VMware. At VMware, he held leadership positions on the cloud teams, helping shape enterprise cloud strategy during a pivotal era of digital transformation. His experience building and scaling technology companies, combined with his front-row seat to the AI revolution, informs his perspective on how organizations must adapt to thrive in the agentic era.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <h2>The Premise</h2>
+            <p>The transformation happening right now is not about offloading work to AI so your people can focus on "higher-value" activities. That is still thinking like a human-centered organization. The real shift is this: You are removing humans from the critical path of enterprise execution.</p>
+            <p>This book provides a comprehensive framework for understanding, implementing, and thriving in the age of AI agents. From creating your first agents to managing enterprise-wide transformation, it covers the strategic, operational, and human dimensions of the agentic revolution.</p>
+        </section>
+
+        <section class="about-section">
+            <h2>What You'll Learn</h2>
+            <p>Across 16 chapters organized in five parts, this book explores:</p>
+            <ul>
+                <li>Why offloading to AI agents is an existential imperative, not just an efficiency play</li>
+                <li>How to build, deploy, and manage AI agents at every level of autonomy</li>
+                <li>Strategies for enterprise transformation and organizational change</li>
+                <li>The human side: new roles, skills, and the uncomfortable truths about workforce impact</li>
+                <li>Governance, ethics, and the boardroom implications of agentic operations</li>
+            </ul>
+        </section>
+
+        <div class="book-details">
+            <div class="detail-row">
+                <span class="label">Chapters</span>
+                <span class="value">16</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">Parts</span>
+                <span class="value">5</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">Reading Time</span>
+                <span class="value">~4 hours</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">Format</span>
+                <span class="value">Web (Free)</span>
+            </div>
+        </div>
+
+        <section class="about-section">
+            <h2>Who This Is For</h2>
+            <p>This book is written for business leaders, executives, managers, and professionals who recognize that AI agents represent a fundamental shift in how work gets done. Whether you're exploring your first agent deployment or planning enterprise-wide transformation, this guide provides the strategic framework and practical insights you need.</p>
+        </section>
+
+        <div class="cta-section">
+            <a href="chapter-01.html">Start Reading</a>
+        </div>
+    </main>
+</body>
+</html>
